@@ -26,16 +26,20 @@ public class App {
         WriteCardToFile writeCardToFile = new WriteCardToFile();
         ReadCardFromFile dataCards = new ReadCardFromFile();
         ParserCard parserCard = new ParserCard();
+        DataBase dataBase = new DataBase();
 
-        DataCardGenerator[] user = {
-                new DataCardGenerator(),
-                new DataCardGenerator(),
-                new DataCardGenerator(),
-                new DataCardGenerator(),
-                new DataCardGenerator()
+        Card[] user = {
+                new Card(),
+                new Card(),
+                new Card(),
+                new Card(),
+                new Card()
         };
+        for (Card us: user) {
+            dataBase.add(us);
+        }
 
-        for (DataCardGenerator us : user) {
+        for (Card us : user) {
             writeCardToFile.toFile(us.toString(), "datacards.txt",true);
         }
 
