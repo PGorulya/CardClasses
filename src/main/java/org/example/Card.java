@@ -8,9 +8,10 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Card {
+    private final String name;
     private final String cardNumber;
     private final int cvv;
-    private final String name;
+
     private final String yearOfExp;
     private final String monthOfExp;
 

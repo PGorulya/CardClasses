@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class DataBase {
     private final List<Card> dataBaseCard;
@@ -22,6 +23,9 @@ public class DataBase {
     }
 
     public void remove(Card card) {
+        if(!dataBaseCard.contains(card)) {
+            throw new NoSuchElementException();
+        }
         dataBaseCard.remove(card);
     }
 
